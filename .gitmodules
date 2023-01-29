@@ -1,0 +1,3 @@
+[submodule "lib/optimisation-helpers"]
+	path = lib/optimisation-helpers
+	url = git@github.com:newlookretailers/optimisation-helpers.git
