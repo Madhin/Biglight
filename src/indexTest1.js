@@ -7,7 +7,15 @@ import css from './assets/scss/styleTest1.scss'
 //   retryTest,
 // } from '../lib/optimisation-helpers/dist'
 
-import { isInViewport, waitForElm, isMobile, retryTest, handleLoadFailure, makeStyleElementString, numberArr } from './helpers'
+import {
+  isInViewport,
+  waitForElm,
+  isMobile,
+  retryTest,
+  handleLoadFailure,
+  makeStyleElementString,
+  numberArr,
+} from './helpers'
 
 // Get our HTML style element as a string to insert wherever
 const styleElementString = makeStyleElementString(css.toString())
@@ -21,6 +29,9 @@ const styleElementString = makeStyleElementString(css.toString())
     if (tries > 5) return handleLoadFailure()
     // Add some logic to check for a target here and then retry
     if (!document.body) return retryTest(init, 500, tries + 1)
+    if (!document.querySelector('#add-to-cart-button'))
+      return retryTest(init, 500, tries + 1)
+    // console.log('should run')
     // Add our css element string to the end of the document body
     document.body.insertAdjacentHTML('beforeend', styleElementString)
   } catch (e) {
