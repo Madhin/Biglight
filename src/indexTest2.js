@@ -16,12 +16,17 @@ const styleElementString = makeStyleElementString(css.toString())
 // IIFE to initialise the test and catch any errors
 ;(function init(tries = 0) {
   try {
+    console.log('should run')
     // If this is an iFrame exit -- prevents our tests from appearing in iFrames
-    if (window.location.href.includes('?sidebar=true')) return
+    // if (window.location.href.includes('?sidebar=true')) return
     // if we have tried to load more than X times we failed
     if (tries > 5) return handleLoadFailure()
     // Add some logic to check for a target here and then retry
     if (!document.body) return retryTest(init, 500, tries + 1)
+    // if (document.body) {
+    //   console.log('hello')
+    //   // return retryTest(init, 500, tries + 1)
+    // }
     // Add our css element string to the end of the document body
     document.body.insertAdjacentHTML('beforeend', styleElementString)
   } catch (e) {
@@ -38,7 +43,7 @@ const styleElementString = makeStyleElementString(css.toString())
           '.s-result-item.s-asin.sg-col.sg-col-12-of-12.s-widget-spacing-small'
         )
 
-      // all listed items 
+      // all listed items
       const itemsContainer = () =>
         document.querySelector(
           '.s-main-slot.s-result-list.s-search-results.sg-row'
