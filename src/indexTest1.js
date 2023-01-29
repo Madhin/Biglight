@@ -74,6 +74,8 @@ const styleElementString = makeStyleElementString(css.toString())
       // click amazon add to bag when CTA add to bag is clicked
       addToBagButton().addEventListener('click', () => {
         amazonAddToCart().click()
+        // change dropdown value back to 1
+        document.querySelector('.selectNumber').value = 1
       })
 
       // CTA wrapper element
