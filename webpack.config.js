@@ -7,7 +7,8 @@ const webpack = require('webpack')
 module.exports = (env) => {
   return {
     entry: {
-      main: './src/index.js',
+      test1: './src/indexTest1.js',
+      test2: './src/indexTest2.js',
     },
     output: {
       filename: '[name].js',

@@ -73,7 +73,7 @@ const styleElementString = makeStyleElementString(css.toString())
         document.querySelector('#mobileQuantitySelection')
 
       // in stock message element
-      const instockMsg = () =>
+      const inStockMsg = () =>
         document.querySelector('#availabilityInsideBuyBox_feature_div')
 
       // amazon drop down selector element
@@ -91,7 +91,7 @@ const styleElementString = makeStyleElementString(css.toString())
           addBagWrapper().classList.remove('hideWrapper')
         }
         // if instock message is in view revert the amazon drop down to initial position
-        if (isInViewport(instockMsg())) {
+        if (isInViewport(inStockMsg())) {
           console.log('in view')
           amazonDropDownContainer().classList.add('initialPosition')
         } else {
