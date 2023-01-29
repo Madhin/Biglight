@@ -1,5 +1,5 @@
 // Import our SCSS and put it into a variable as a string
-import css from './assets/scss/style.scss'
+import css from './assets/scss/styleTest1.scss'
 // Get a helper to make our style element
 // import {
 //   makeStyleElementString,
