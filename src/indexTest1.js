@@ -1,5 +1,6 @@
 // Challenge One
 // Import our SCSS and put it into a variable as a string
+
 import css from './assets/scss/styleTest1.scss'
 // Get a helper to make our style element
 // import {
@@ -113,6 +114,8 @@ const styleElementString = makeStyleElementString(css.toString())
         }
       })
 
+      // const popover = () => document.querySelector('.a-popover-wrapper')
+
       // CTA drop down element
       const selectNumber = () => document.querySelectorAll('.selectNumber')
 
@@ -125,6 +128,10 @@ const styleElementString = makeStyleElementString(css.toString())
 
           // clicks amazon drop down to open up quantity popover
           amazonDropDownSelector().click()
+
+          const addStyle = `<style class="hide-popup">.a-popover-wrapper, #a-popover-lgtbox {visibility: hidden;}</style>`
+          document.body.insertAdjacentHTML('beforeBegin', addStyle)
+          
 
           // variable that stores all values from popover quantity selector
           const popoverDropdown = () =>
@@ -160,11 +167,16 @@ const styleElementString = makeStyleElementString(css.toString())
               const popoverClose = () =>
                 document.querySelector('.a-button-close.a-declarative')
 
+                
+
               // timeout function that closes the popover after a second
               setTimeout(function () {
                 firstTime = true
                 popoverClose().click()
+                document.querySelector('.hide-popup').remove()
               }, 1000)
+
+             
 
               // sets first time variable as true if false and timeout function that executes the click after 0.5 seconds
               if (!firstTime) {
@@ -174,6 +186,7 @@ const styleElementString = makeStyleElementString(css.toString())
                 }, 500)
                 popoverClose().click()
               }
+               
             })
         })
       )
