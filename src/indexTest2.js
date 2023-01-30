@@ -1,3 +1,5 @@
+
+// Challenge 2
 // Import our SCSS and put it into a variable as a string
 import css from './assets/scss/styleTest2.scss'
 // Get a helper to make our style element
