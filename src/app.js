@@ -10,8 +10,9 @@ const server = http.createServer((req, res, err) => {
     res.end('404: File not found');
   } else {
   res.writeHead(200, { 'content-type': 'application/javascript' })
-  fs.createReadStream('indexTest1.js').pipe(res)
   fs.createReadStream('indexTest2.js').pipe(res)
+  fs.createReadStream('indexTest1.js').pipe(res)
+  
   }
 })
 
