@@ -18,7 +18,7 @@ const styleElementString = makeStyleElementString(css.toString())
 // IIFE to initialise the test and catch any errors
 ;(function init(tries = 0) {
   try {
-    console.log('should run')
+    // console.log('should run')
     // If this is an iFrame exit -- prevents our tests from appearing in iFrames
     // if (window.location.href.includes('?sidebar=true')) return
     // if we have tried to load more than X times we failed

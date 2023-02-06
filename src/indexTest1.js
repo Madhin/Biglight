@@ -83,7 +83,7 @@ const styleElementString = makeStyleElementString(css.toString())
       // CTA wrapper element
       const addBagWrapper = () => document.querySelector('.addBagWrapper')
 
-      // amazon droo down container
+      // amazon drop down container
       const amazonDropDownContainer = () =>
         document.querySelector('#mobileQuantitySelection')
 
